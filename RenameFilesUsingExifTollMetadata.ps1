@@ -1,0 +1,4 @@
+﻿$exiftoolResults = "", "", ""
+$line = 0
+$fileNumber = 1
+Get-ChildItem -Path '.\Pictures\La familia' -Filter *.jpg | `    % { & 'C:\Program Files (x86)\ExifTool\exiftool.exe' -Directory -FileName -DateTimeOriginal $_.FullName } | `    % {         $exiftoolResults[$line] = $_.Substring(34)        $line++        if($line -eq 3) {            $newName = $exiftoolResults[2].Substring(0,4) + "-" + $exiftoolResults[2].Substring(5,2) + "-" + $exiftoolResults[2].Substring(8,2) + $exiftoolResults[2].Substring(10).Replace(":", "") + "-" + $fileNumber.ToString("000") + ".jpg"            write-host $(Join-Path -Path $exiftoolResults[0] -ChildPath $exiftoolResults[1]) '==>' $(Join-Path -Path $exiftoolResults[0] -ChildPath $newName)            Rename-Item $(Join-Path -Path $exiftoolResults[0] -ChildPath $exiftoolResults[1]) $(Join-Path -Path $exiftoolResults[0] -ChildPath $newName)             $line = 0            $fileNumber++        }     }

@@ -1,0 +1,1 @@
+﻿Update-PS6Docset -datafolder "C:\PowerShell 6 Reference\InstalledCmdletParameterInfo" -docs51folder "C:\PowerShell 6 Reference\5.1" -docs6folder "C:\PowerShell 6 Reference\6" -platylogfolder "C:\PowerShell 6 Reference\logs"

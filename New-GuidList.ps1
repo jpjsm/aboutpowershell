@@ -1,0 +1,1 @@
+1 .. 9 | % { New-Guid | %{ write-host -NoNewLine "`"$_`"," }}

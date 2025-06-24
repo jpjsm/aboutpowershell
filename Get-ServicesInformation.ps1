@@ -1,0 +1,3 @@
+﻿Get-WMIObject -Class Win32_Service | Select-Object -Property Name,state,displayname,description | Where-Object {$_.Name -like "*analysis*" -or $_.displayname -like "*analysis*" -or $_.description -like "*analysis*"}
+Get-WMIObject -Class Win32_Service | Select-Object -Property Name,state,displayname,description | Where-Object {$_.Name -like "*telemetry*" -or $_.displayname -like "*telemetry*" -or $_.description -like "*telemetry*"}
+## Get-Service | Format-Table -Property *

@@ -1,0 +1,5 @@
+﻿[System.Text.StringBuilder]$stringbuilder = [System.Text.StringBuilder]::new(2048)
+$stringbuilder.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+$stringbuilder.Append("abcefghijklmnopqrstuvwxyz")
+$stringbuilder.Append("0123456789")
+$stringbuilder.ToString()
